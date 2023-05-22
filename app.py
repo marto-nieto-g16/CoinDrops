@@ -11,7 +11,7 @@ API_SECRET = 'lUlwoziJzYqpSo9jS8tf5IStJpZ0Fdvq'
 client = Client(API_KEY, API_SECRET)
 
 FAUCET_AMOUNT = 0.011  # Cantidad de criptomonedas que se distribuirán en cada reclamo
-CLAIM_INTERVAL = 24 * 60 * 60  # Intervalo de tiempo en segundos entre reclamos (42 horas)
+CLAIM_INTERVAL = 42 * 60 * 60  # Intervalo de tiempo en segundos entre reclamos (42 horas)
 
 
 
