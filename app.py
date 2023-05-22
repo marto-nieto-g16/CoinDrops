@@ -1,3 +1,4 @@
+# app.py
 from flask import Flask, render_template, request, jsonify
 from coinbase.wallet.client import Client
 import redis
@@ -12,8 +13,6 @@ client = Client(API_KEY, API_SECRET)
 
 FAUCET_AMOUNT = 0.011  # Cantidad de criptomonedas que se distribuirán en cada reclamo
 CLAIM_INTERVAL = 42 * 60 * 60  # Intervalo de tiempo en segundos entre reclamos (42 horas)
-
-
 
 # Configura la conexión a Redis
 redis_host = 'redis://red-chlotgu7avj217fvm180'
