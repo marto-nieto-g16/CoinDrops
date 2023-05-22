@@ -22,7 +22,7 @@ services:
   - name: web
     env: {}
     plan: Hobby
-    region: Oregon  # Replace with your desired region (e.g., us-west)
+    region: us-west  # Replace with your desired region (e.g., us-west)
 
 # Specify the static sites (if applicable)
 staticSites: []
