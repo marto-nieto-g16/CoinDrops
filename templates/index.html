@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faucet CoinDrops</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+        <header>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/about">Acerca del Ptoyecto</a></li>
+                <li><a href="/sponsorship">Patrocinio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Bienvenido a CoinDrops</h1>
+        <p>Reclama tus criptomonedas gratuitas cada 42 horas.</p>
+        <form id="claim-form" method="POST" action="/claim">
+            <label for="cryptocurrency">Selecciona una criptomoneda:</label>
+            <select id="cryptocurrency" name="cryptocurrency">
+                <option value="#"></option>
+                <option value="shib">Shiba Inu</option>
+            </select>
+            <label for="address">Dirección de la billetera:</label>
+            <input type="text" id="address" name="address" required>
+
+            <button type="submit">Reclamar</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+        <footer>
+        <img src="static/img/coinbase-logo.png" alt="Coinbase Logo" class="coinbase-logo">
+        <p>&copy; 2023 Faucet CoinDrops. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('claim-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var address = document.getElementById('address').value;
+
+            // Realizar la solicitud AJAX al servidor
+            axios.post('/claim', { address: address })
+                .then(function(response) {
+                    // Si la solicitud es exitosa, muestra un mensaje de éxito
+                    var messageElement = document.getElementById('message');
+                    messageElement.textContent = response.data.message;
+                    messageElement.style.color = 'green';
+                })
+                .catch(function(error) {
+                    // Si la solicitud falla, muestra un mensaje de error
+                    var messageElement = document.getElementById('message');
+                    messageElement.textContent = 'Error al reclamar la criptomoneda.';
+                    messageElement.style.color = 'red';
+                });
+        });
+    </script>
+</body>
+</html>
