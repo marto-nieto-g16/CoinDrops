@@ -16,7 +16,7 @@ CLAIM_INTERVAL = 42 * 60 * 60  # Intervalo de tiempo en segundos entre reclamos 
 
 
 # Configura la conexión a Redis
-redis_host = 'localhost'
+redis_host = 'redis://red-chlotgu7avj217fvm180'
 redis_port = 6379
 redis_db = 0
 redis_client = redis.Redis(host=redis_host, port=redis_port, db=redis_db)
