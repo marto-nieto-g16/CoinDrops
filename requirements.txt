@@ -1,1 +1,3 @@
-pip install Flask redis coinbase
+pip install Flask 
+pip install redis
+pip install coinbase
